@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+    Edit
+{% endblock title %}
+{% block body %}
+
+<div class="container py-5">
+    <h2 class="mb-4">Update Task</h2>
+    <form action="/edit/{{todo.sno}}" method="POST">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" name="title" id="title" value="{{todo.title}}" aria-describedby="task-title" required>
+        </div>
+        <div class="mb-4">
+            <label for="desc" class="form-label">Description</label>
+            <input type="text" class="form-control" name="desc" id="desc" value="{{todo.desc}}" aria-describedby="task-desc">
+        </div>
+        <button type="submit" class="btn btn-dark"><i
+            class="bi bi-check2 me-2"></i>Edit</button>
+    </form>
+</div>
+
+{% endblock body %}
